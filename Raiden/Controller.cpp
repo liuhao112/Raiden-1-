@@ -81,7 +81,7 @@ void Controller::GameWaitReset()	//游戏等待重置Hero
 {
 	this->state = 3;
 }
-void Controller::RenderScene()
+void Controller::RenderScene()                                       //用双缓冲技术来完成画面的显示
 {
 	HDC hdc = GetDC(m_hWnd);
 	HDC hdcBuffer = CreateCompatibleDC(hdc);
