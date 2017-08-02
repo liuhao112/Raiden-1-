@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="raiden.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Images.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Explode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroHealth.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroLife.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BuffGoods.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Images.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Explode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroHealth.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroLife.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffGoods.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Raiden2.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\addhealth.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\boss.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\bullet.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\changefire1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\changefire2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\changefire3.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\changefire4.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\changefire5.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\continue.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\enemybullet.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\enter.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (1).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (2).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (3).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (4).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (5).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (6).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (7).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (8).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (9).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (10).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (11).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (12).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (13).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (14).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (15).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (16).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (17).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (18).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (19).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (20).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\explode (21).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\gameover.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\health.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\laser.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\life.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num0.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num3.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num4.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num5.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num6.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num7.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num8.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\num9.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\panel.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\pass.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane3.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane4.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane5.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane6.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane7.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane8.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane9.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane10.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane11.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane12.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane13.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane14.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\plane15.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\sky.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\startbg.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\mystore.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\3.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\4.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="images\superbullet.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
