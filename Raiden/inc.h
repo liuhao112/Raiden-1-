@@ -18,7 +18,7 @@
 #pragma comment(lib,"vfw32.lib")
 using namespace std;
 
-enum BulletDirection{ U, LUU, RUU, LU, LLU, RU, RRU, LD, LLD, RD, RRD, LDD, RDD, D, L, R };//子弹运动方向
+enum BulletDirection{ U, LUU, RUU, LU, LLU, RU, RRU, LD, LLD, RD, RRD, LDD, RDD, D, L, R };//瀛愬脊type
 
 
 #endif
