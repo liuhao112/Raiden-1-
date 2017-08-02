@@ -1,5 +1,5 @@
-#include "Controller.h"
-#include "inc.h"
+#include "Controller.h"                                               //æœ¬æ¨¡å—è´Ÿè´£æ¸¸æˆçš„æ•´ä½“æ§åˆ¶ï¼Œä»æ¸¸æˆçš„è¿è¡Œä»¥åŠå…¶ä¸­å„ç§æ“ä½œçš„å¤„ç†ï¼Œæ­¤æ¨¡å—ä¸º
+#include "inc.h"                                                      //è¯¥é¡¹ç›®çš„æ ¸å¿ƒæ¨¡å—ï¼Œä¹Ÿæ˜¯åœ¨å­¦ä¹ ä¸­é‡ç‚¹äº†è§£çš„æ¨¡å—
 #include "Bullet.h"
 
 Controller::Controller(HWND hWnd)
@@ -9,12 +9,12 @@ Controller::Controller(HWND hWnd)
 	m_pImages = new Images(m_hInst);
 	m_pBackGround = new BackGround(m_pImages->hImgSky);
 
-	this->heroCurentDemage = 2;//³õÊ¼ÉËº¦Îª2
+	this->heroCurentDemage = 2;//åˆå§‹ä¼¤å®³ä¸º2
 
 	m_pHero = new Hero(m_pImages->hImgHero);	
 	m_pHeroHealth = new HeroHealth(m_pImages->hImgHealth);	
 	m_pHeroLife = new HeroLife(m_pImages->hImgLife);
-	ResetHero();//ÖØÖÃHero¶ÔÏó
+	ResetHero();//é‡ç½®Heroå¯¹è±¡
 	m_pEnemyBulletList = new list<Bullet>();
 	m_pEnemyList = new list<Enemy>();
 	m_pExplodeList = new list<Explode>();
@@ -54,18 +54,18 @@ void Controller::GameEnd()
 }
 void Controller::OpenStore()
 {
-	if (!isStoreOpen)//ÉÌµêÎ´´ò¿ª
+	if (!isStoreOpen)//å•†åº—æœªæ‰“å¼€
 	{
-		//´ò¿ªÉÌµê
+		//æ‰“å¼€å•†åº—
 		if (this->state == 1 || this->state == 0)
 		{
 			this->state = 0;
 			this->isStoreOpen = true;
 		}
 	}
-	else//ÉÌµêÒÑ¾­´ò¿ª
+	else//å•†åº—å·²ç»æ‰“å¼€
 	{
-		CloseStore();//¹Ø±ÕÉÌµê
+		CloseStore();//å…³é—­å•†åº—
 	}
 		
 }
@@ -77,7 +77,7 @@ void Controller::CloseStore()
 		this->state = 1;
 	}
 }
-void Controller::GameWaitReset()	//ÓÎÏ·µÈ´ıÖØÖÃHero
+void Controller::GameWaitReset()	//æ¸¸æˆç­‰å¾…é‡ç½®Hero
 {
 	this->state = 3;
 }
@@ -109,16 +109,16 @@ void Controller::RenderScene()
 
 		if (state == 2)
 		{
-			this->DrawGameOver(hdcBuffer);//ÓÎÏ·½áÊø
+			this->DrawGameOver(hdcBuffer);//æ¸¸æˆç»“æŸ
 		}	
 		if (state == 3)
 		{
-			this->DrawGameContinue(hdcBuffer);//¼ÌĞøÓÎÏ·
+			this->DrawGameContinue(hdcBuffer);//ç»§ç»­æ¸¸æˆ
 		}
 	}
 	else
 	{
-		this->DrawStartBackGround(hdcBuffer);//Èë¿Ú³¡¾°
+		this->DrawStartBackGround(hdcBuffer);//å…¥å£åœºæ™¯
 	}
 	
 	BitBlt(hdc, 0, 0, 800, 600, hdcBuffer, 0, 0, SRCCOPY);
@@ -128,29 +128,29 @@ void Controller::RenderScene()
 	ReleaseDC(m_hWnd, hdc);
 }	
 
-void Controller::SetGoingUp(bool up)			//ÉèÖÃHeroÔË¶¯·½ÏòÏòÉÏ
+void Controller::SetGoingUp(bool up)			//è®¾ç½®Heroè¿åŠ¨æ–¹å‘å‘ä¸Š
 {
 	this->isGoingUp = up;
 }
-void Controller::SetGoingDown(bool down)		//ÉèÖÃHeroÔË¶¯·½ÏòÏòÏÂ
+void Controller::SetGoingDown(bool down)		//è®¾ç½®Heroè¿åŠ¨æ–¹å‘å‘ä¸‹
 {
 	this->isGoingDown = down;
 }
-void Controller::SetGoingLeft(bool left)		//ÉèÖÃHeroÔË¶¯·½ÏòÏò×ó
+void Controller::SetGoingLeft(bool left)		//è®¾ç½®Heroè¿åŠ¨æ–¹å‘å‘å·¦
 {
 	this->isGoingLeft = left;
 }
-void Controller::SetGoingRight(bool right)		//ÉèÖÃHeroÔË¶¯·½ÏòÏòÓÒ
+void Controller::SetGoingRight(bool right)		//è®¾ç½®Heroè¿åŠ¨æ–¹å‘å‘å³
 {
 	this->isGoingRight = right;
 }
 
-void Controller::SetHeroFire(bool fire)		//ÉèÖÃHero¿ª»ğ
+void Controller::SetHeroFire(bool fire)		//è®¾ç½®Heroå¼€ç«
 {
 	this->isFire = fire;
 }
 
-void Controller::SetHeroFireMode(int type,int demage)	//ÉèÖÃHero¿ª»ğÄ£Ê½
+void Controller::SetHeroFireMode(int type,int demage)	//è®¾ç½®Heroå¼€ç«æ¨¡å¼
 {
 	if (m_pHero != nullptr)
 	{
@@ -158,7 +158,7 @@ void Controller::SetHeroFireMode(int type,int demage)	//ÉèÖÃHero¿ª»ğÄ£Ê½
 	}
 }
 
-void Controller::HeroRun()			//¿ØÖÆHeroÔË¶¯
+void Controller::HeroRun()			//æ§åˆ¶Heroè¿åŠ¨
 {
 	if (m_pHero == nullptr)
 		return;
@@ -252,14 +252,14 @@ void Controller::DrawAllBuffGoods(HDC hdc)
 		}
 	}
 }
-void Controller::AllRun()						//¿ØÖÆËùÓĞÎïÌåÔË¶¯
+void Controller::AllRun()						//æ§åˆ¶æ‰€æœ‰ç‰©ä½“è¿åŠ¨
 {
 	if (!m_pHero->IsDead())
 	{
-		HeroRun();//HeroÔË¶¯
+		HeroRun();//Heroè¿åŠ¨
 	}	
-	m_pBackGround->BackGroundRun();//±³¾°ÒÆ¶¯
-	m_pHero->AllHeroBulletRun();//ËùÓĞHero bulletÔË¶¯
+	m_pBackGround->BackGroundRun();//èƒŒæ™¯ç§»åŠ¨
+	m_pHero->AllHeroBulletRun();//æ‰€æœ‰Hero bulletè¿åŠ¨
 	AllEnemyRun();
 	AllBulletRun();
 	AllBuffGoodsRun();
@@ -278,9 +278,9 @@ void Controller::AllBulletRun()
 				this->m_pExplodeList->push_back(Explode(this->GetImages()->hImgExplode, m_pHero->GetX(), m_pHero->GetY()));
 				m_pHero->SetVisible(false);
 				if (m_pHeroLife->GetLifeNum() > 0)
-					GameWaitReset();//µÈ´ıHeroÖØÖÃ
+					GameWaitReset();//ç­‰å¾…Heroé‡ç½®
 				else
-					GameEnd();//ÓÎÏ·½áÊø
+					GameEnd();//æ¸¸æˆç»“æŸ
 			}
 			this->m_pHeroHealth->SetHp(m_pHero->GetHealth());
 			i.SetDead(true);
@@ -300,7 +300,7 @@ void Controller::AllBulletRun()
 }
 void Controller::AllEnemyRun()
 {
-	AddEnemy();//Ìí¼ÓµĞÈË
+	AddEnemy();//æ·»åŠ æ•Œäºº
 
 	for (auto&i : *m_pEnemyList)
 	{
@@ -308,26 +308,26 @@ void Controller::AllEnemyRun()
 		i.BeHit(m_pHero);
 		if (!this->m_pHero->IsDead()&&i.IsCollision(this->m_pHero))
 		{
-			this->m_pHero->AddHealth(-5);//×²·É»ú¼õ5Ñª
+			this->m_pHero->AddHealth(-5);//æ’é£æœºå‡5è¡€
 			if (m_pHero->IsDead())//Hero Die
 			{
 				this->m_pExplodeList->push_back(Explode(GetImages()->hImgExplode, m_pHero->GetX(), m_pHero->GetY()));
 				m_pHero->SetVisible(false);
 				if (m_pHeroLife->GetLifeNum() > 0)
-					GameWaitReset();//µÈ´ıHeroÖØÖÃ
+					GameWaitReset();//ç­‰å¾…Heroé‡ç½®
 				else
-					GameEnd();//ÓÎÏ·½áÊø
+					GameEnd();//æ¸¸æˆç»“æŸ
 			}
 			this->m_pHeroHealth->SetHp(m_pHero->GetHealth());
-			i.AddHealth(-100);//µĞ»ú¼õÑª100
+			i.AddHealth(-100);//æ•Œæœºå‡è¡€100
 		}
 	}
 	for (std::list<Enemy>::iterator i = m_pEnemyList->begin(); i != m_pEnemyList->end();)
 	{
 		if (i->IsDead())
 		{
-			this->allScore += i->GetScore();//¼Æ·Ö
-			i = m_pEnemyList->erase(i);//Ïû³ı¸ÃµĞÈË¶ÔÏó
+			this->allScore += i->GetScore();//è®¡åˆ†
+			i = m_pEnemyList->erase(i);//æ¶ˆé™¤è¯¥æ•Œäººå¯¹è±¡
 		}
 		else
 		{
@@ -338,14 +338,14 @@ void Controller::AllEnemyRun()
 
 void Controller::AllBuffGoodsRun()
 {
-	AddBuffGoods();//Ìí¼ÓÔöÒæÎïÆ·
+	AddBuffGoods();//æ·»åŠ å¢ç›Šç‰©å“
 
 	for (auto&i : *m_pBuffGoodsList)
 	{
 		i.BuffRun();
 		if (!this->m_pHero->IsDead() && i.IsCollision(this->m_pHero))
 		{
-			//BuffĞ§¹û
+			//Buffæ•ˆæœ
 			if (i.GetType() < 4)
 			{
 				m_pHero->SetFireMode(m_pImages->hImgBullet, heroCurentDemage, i.GetType());
@@ -377,7 +377,7 @@ void Controller::AllBuffGoodsRun()
 	{
 		if (i->IsDead())
 		{
-			i = m_pBuffGoodsList->erase(i);//Ïû³ı¸ÃBuff¶ÔÏó
+			i = m_pBuffGoodsList->erase(i);//æ¶ˆé™¤è¯¥Buffå¯¹è±¡
 		}
 		else
 		{
@@ -393,8 +393,8 @@ void Controller::ResetHero()
 	{
 		m_pHero->Reset();
 		m_pHero->SetFireMode(m_pImages->hImgBullet, heroCurentDemage, 0);
-		m_pHeroHealth->SetHp(m_pHero->GetHealth());//»ñÈ¡ÉúÃüÖµ
-		m_pHeroLife->SetLifeNum(m_pHeroLife->GetLifeNum() - 1);					//³õÊ¼ÉèÖÃÉúÃüÊı3
+		m_pHeroHealth->SetHp(m_pHero->GetHealth());//è·å–ç”Ÿå‘½å€¼
+		m_pHeroLife->SetLifeNum(m_pHeroLife->GetLifeNum() - 1);					//åˆå§‹è®¾ç½®ç”Ÿå‘½æ•°3
 		this->state = 1;
 	}
 }
@@ -404,7 +404,7 @@ void Controller::DrawStartBackGround(HDC hdc)
 	HBITMAP tmpHbmp;
 	HDC hdcsrc;
 	BITMAP bmp;
-	//»æÖÆ±³¾°Í¼
+	//ç»˜åˆ¶èƒŒæ™¯å›¾
 	tmpHbmp = m_pImages->hImgStartBg;
 	hdcsrc = CreateCompatibleDC(hdc);
 	SelectObject(hdcsrc, tmpHbmp);
@@ -412,7 +412,7 @@ void Controller::DrawStartBackGround(HDC hdc)
 	BitBlt(hdc, 0, 0, bmp.bmWidth, bmp.bmHeight, hdcsrc, 0, 0,SRCCOPY);
 	DeleteDC(hdcsrc);
 
-	//»æÖÆEnterÍ¼
+	//ç»˜åˆ¶Enterå›¾
 	tmpHbmp = m_pImages->hImgEnter;
 	hdcsrc = CreateCompatibleDC(hdc);
 	SelectObject(hdcsrc, tmpHbmp);
@@ -485,100 +485,100 @@ bool Controller::Buy(int goodType)
 {
 	if (isStoreOpen)
 	{
-		if (goodType == 1)//ÂúÑª
+		if (goodType == 1)//æ»¡è¡€
 		{
 			if (!m_pHero->IsDead() && m_pHero->GetHealth() != 100 && this->allScore >= 1000)
 			{
-				allScore -= 1000;//»ı·Ö¼õ1000
-				m_pHero->SetHealth(100);//ÑªÁ¿ÉèÎª100
+				allScore -= 1000;//ç§¯åˆ†å‡1000
+				m_pHero->SetHealth(100);//è¡€é‡è®¾ä¸º100
 				m_pHeroHealth->SetHp(m_pHero->GetHealth());
 			}
 		}
-		else if (goodType == 2)//¼Ó1¹¥»÷Á¦
+		else if (goodType == 2)//åŠ 1æ”»å‡»åŠ›
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 1000)
 			{
-				allScore -= 1000;//»ı·Ö¼õ1000
+				allScore -= 1000;//ç§¯åˆ†å‡1000
 				this->heroCurentDemage += 1;				
 			}
 		}
-		else if (goodType == 3)//¼Ó3¹¥»÷Á¦
+		else if (goodType == 3)//åŠ 3æ”»å‡»åŠ›
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 2500)
 			{
-				allScore -= 2500;//»ı·Ö¼õ2500
+				allScore -= 2500;//ç§¯åˆ†å‡2500
 				this->heroCurentDemage += 3;
 			}
 		}
-		else if (goodType == 4)//¼Ó3¹¥»÷Á¦
+		else if (goodType == 4)//åŠ 3æ”»å‡»åŠ›
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 3500)
 			{
-				allScore -= 3500;//»ı·Ö¼õ3500
+				allScore -= 3500;//ç§¯åˆ†å‡3500
 				this->heroCurentDemage += 5;
 			}
 		}
-		else if (goodType == 5)//¼Ó30%¹¥»÷Á¦
+		else if (goodType == 5)//åŠ 30%æ”»å‡»åŠ›
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 50000)
 			{
-				allScore -= 50000;//»ı·Ö¼õ50000
+				allScore -= 50000;//ç§¯åˆ†å‡50000
 				this->heroCurentDemage = (int)(heroCurentDemage*1.3);
 			}
 		}
-		else if (goodType == 6)//¼Ó50%¹¥»÷Á¦
+		else if (goodType == 6)//åŠ 50%æ”»å‡»åŠ›
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 99000)
 			{
-				allScore -= 99000;//»ı·Ö¼õ99000
+				allScore -= 99000;//ç§¯åˆ†å‡99000
 				this->heroCurentDemage = (int)(heroCurentDemage*1.5);
 			}
 		}
-		else if (goodType == 7)//¼ÓÒ»ÌõÃü
+		else if (goodType == 7)//åŠ ä¸€æ¡å‘½
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 10000)
 			{				
 				if (this->m_pHeroLife->GetLifeNum() < 4)
 				{
-					allScore -= 10000;//»ı·Ö¼õ10000
+					allScore -= 10000;//ç§¯åˆ†å‡10000
 					this->m_pHeroLife->SetLifeNum(m_pHeroLife->GetLifeNum() + 1);
 				}
 				
 			}
 		}
-		else if (goodType == 8)//¼ÓBoss1
+		else if (goodType == 8)//åŠ Boss1
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 50000)
 			{	
-				allScore -= 50000;//»ı·Ö¼õ50000
+				allScore -= 50000;//ç§¯åˆ†å‡50000
 				this->m_pEnemyList->push_back(Enemy(m_pImages->hImgBoss, this, 50000, 1));
 			}
 		}
-		else if (goodType == 9)//¼ÓBoss2
+		else if (goodType == 9)//åŠ Boss2
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 50000)
 			{
-				allScore -= 50000;//»ı·Ö¼õ50000
+				allScore -= 50000;//ç§¯åˆ†å‡50000
 				this->m_pEnemyList->push_back(Enemy(m_pImages->hImgBoss, this, 100000, 2));
 			}
 		}
-		else if (goodType == 0)//¼ÓBoss3
+		else if (goodType == 0)//åŠ Boss3
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 50000)
 			{
-				allScore -=50000;//»ı·Ö¼õ50000
+				allScore -=50000;//ç§¯åˆ†å‡50000
 				this->m_pEnemyList->push_back(Enemy(m_pImages->hImgBoss, this, 150000, 3));
 			}
 		}
-		else if (goodType == 10)//¼ÓBoss4
+		else if (goodType == 10)//åŠ Boss4
 		{
 			if (!m_pHero->IsDead() && this->allScore >= 50000)
 			{
-				allScore -= 50000;//»ı·Ö¼õ50000
+				allScore -= 50000;//ç§¯åˆ†å‡50000
 				this->m_pEnemyList->push_back(Enemy(m_pImages->hImgBoss, this, 200000, 4));
 			}
 		}
-		else if (goodType == 11)//ÄÜÁ¿µ¯
+		else if (goodType == 11)//èƒ½é‡å¼¹
 		{
 			if (!m_pHero->IsDead() && this->isGotGoods1&&this->isGotGoods2&&this->isGotGoods3&&this->isGotGoods4)
 			{
@@ -625,7 +625,7 @@ void Controller::AddGoods(int goodsType)
 
 void Controller::DrawAttribute(HDC hdc)
 {
-	//ÊôĞÔÖµÃæ°å
+	//å±æ€§å€¼é¢æ¿
 	int x = 450;
 	int y = 520;
 
@@ -633,24 +633,24 @@ void Controller::DrawAttribute(HDC hdc)
 	memset(atack, 0, sizeof(atack));
 	sprintf_s(atack,sizeof(atack), "%d", this->heroCurentDemage);
 
-	TextOut(hdc,x, y, "¹¥»÷Á¦£º", 8);
+	TextOut(hdc,x, y, "æ”»å‡»åŠ›ï¼š", 8);
 	TextOut(hdc, x+60, y, atack, strlen(atack));
 
 	if (this->isGotGoods1)
-		TextOut(hdc, x, y+30, "ÄÜÁ¿Ê¯£º1", 9);
+		TextOut(hdc, x, y+30, "èƒ½é‡çŸ³ï¼š1", 9);
 	else
-		TextOut(hdc, x, y+30, "ÄÜÁ¿Ê¯£º0", 9);
+		TextOut(hdc, x, y+30, "èƒ½é‡çŸ³ï¼š0", 9);
 	if (this->isGotGoods2)
-		TextOut(hdc, x, y + 60, "¾«ÆÇÊ¯£º1", 9);
+		TextOut(hdc, x, y + 60, "ç²¾é­„çŸ³ï¼š1", 9);
 	else
-		TextOut(hdc, x, y + 60, "¾«ÆÇÊ¯£º0", 9);
+		TextOut(hdc, x, y + 60, "ç²¾é­„çŸ³ï¼š0", 9);
 	if (this->isGotGoods3)
-		TextOut(hdc, x+80, y + 30, "ºÚ  Ìú£º1", 9);
+		TextOut(hdc, x+80, y + 30, "é»‘  é“ï¼š1", 9);
 	else
-		TextOut(hdc, x+80, y + 30, "ºÚ  Ìú£º0", 9);
+		TextOut(hdc, x+80, y + 30, "é»‘  é“ï¼š0", 9);
 	if (this->isGotGoods4)
-		TextOut(hdc, x+80, y + 60, "¸ßÄÜÌ¼£º1", 9);
+		TextOut(hdc, x+80, y + 60, "é«˜èƒ½ç¢³ï¼š1", 9);
 	else
-		TextOut(hdc, x+80, y + 60, "¸ßÄÜÌ¼£º0", 9);
+		TextOut(hdc, x+80, y + 60, "é«˜èƒ½ç¢³ï¼š0", 9);
 
 }
