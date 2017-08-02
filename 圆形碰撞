@@ -1,0 +1,8 @@
+Enemry与Hero的碰撞
+Enemrybullet与Hero的碰撞
+HeroBullet与Enemry的碰撞
+
+
+1.根据获取的精灵的height和width 计算出尽量的半径R=sqrt（a*a+b*b）/2
+2.分别获取两个精灵的坐标（x,y）计算出两个精灵之间的距离distance
+3.根据r1和r2以及求出的distance判断是否相撞
